@@ -2,15 +2,23 @@ import React, { Component } from 'react';
 
 class Cities extends Component {
     render() {
-        const { name, destination, country } = this.props;
+        const { cities } = this.props; // De-Structurelisation
+        const htmlCitiesList = cities.map(city => {
+            return (
+                <div className="cities">
+                    <div>Name :  {city.name}</div>
+                    <div>Destination : {city.destination}</div>
+                    <div>Country : {city.country}</div>
+                </div>
+            );
+        });
+
         return (
-            <div className="cities">
-                <div>Name :  {name}</div>
-                <div>Destination : {destination}</div>
-                <div>Country : {country}</div> 
+            <div className="City-List">
+                {htmlCitiesList}
             </div>
         );
     }
 }
 
-export default Cities ;
+export default Cities;
