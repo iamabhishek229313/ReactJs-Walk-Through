@@ -11,7 +11,7 @@ const Cities = ({cities}) => {
     const { cities } = props; // De-Structurelisation
     const htmlCitiesList = cities.map(city => {
         return (
-            <div className="cities">
+            <div className="cities" key={city.id} >
                 <hr></hr>
                 <div>Name :  {city.name}</div>
                 <div>Destination : {city.destination}</div>

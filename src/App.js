@@ -1,6 +1,8 @@
 import React ,{Component} from 'react';
 import Cities from './Cities' ;
+import './AddCity' ;
 import './App.css';
+import AddCity from './AddCity';
 
 
 
@@ -14,6 +16,14 @@ class App extends Component {
     ]
   };
   
+  addCity = (city) =>{
+    city.id = Math.random() ;
+    let newCities = [...this.state.cities , city];
+    this.setState({
+      cities : newCities
+    });
+  }
+
   render() {
     return (
       <div className= "App">
@@ -22,6 +32,7 @@ class App extends Component {
         </h1>
         <p>Welcome</p>
         <Cities cities = {this.state.cities} />
+        <AddCity newCity={this.addCity}/>
       </div>
     );
   }
