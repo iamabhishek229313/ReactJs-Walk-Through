@@ -24,6 +24,16 @@ class App extends Component {
     });
   }
 
+  deleteCity = (id) => {
+    let newCities = this.state.cities.filter( city =>{
+      return city.id !== id ; // return false for the id that we want to delete there .
+    });
+
+    this.setState({
+      cities : newCities 
+    });
+  }
+
   render() {
     return (
       <div className= "App">
@@ -31,7 +41,7 @@ class App extends Component {
           First Page In React JS and the first walk-through into this.
         </h1>
         <p>Welcome</p>
-        <Cities cities = {this.state.cities} />
+        <Cities deleteCity={this.deleteCity} cities = {this.state.cities} />
         <AddCity newCity={this.addCity}/>
       </div>
     );

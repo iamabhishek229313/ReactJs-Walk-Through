@@ -8,6 +8,7 @@ const Cities = ({cities}) => {
     ........
 }
     */
+    const {deleteCity} = props ;
     const { cities } = props; // De-Structurelisation
     const htmlCitiesList = cities.map(city => {
         return (
@@ -16,6 +17,7 @@ const Cities = ({cities}) => {
                 <div>Name :  {city.name}</div>
                 <div>Destination : {city.destination}</div>
                 <div>Country : {city.country}</div>
+                <button onClick={() => {deleteCity(city.id)}}>DELETE CITY</button>
                 <hr></hr>
             </div>
         );
